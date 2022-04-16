@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/Study/ProgrammTehnology/Lab1/Proc/replace.cpp
+replace.h
+D:/Study/ProgrammTehnology/Lab1/Proc/replace.h
+fstream
+-
+cstring
+-
+
+D:/Study/ProgrammTehnology/Lab1/Proc/replace.h
+fstream
+-
+vector
+-
+utility
+-
+
