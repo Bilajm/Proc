@@ -66,3 +66,4 @@ void Out(replace *r, ofstream &ofst) {
     }
     ofst << endl << "Output text: " << r->repltext << endl;
 }
+

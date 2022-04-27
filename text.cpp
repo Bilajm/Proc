@@ -1,6 +1,5 @@
 #include "text.h"
 
-
 shift* Inshift(string &otext, ifstream &ifst);
 replace* Inreplace(string &otext, ifstream &ifst);
 intreplace* Inintrep(string &otext, ifstream &ifst);
@@ -8,6 +7,14 @@ intreplace* Inintrep(string &otext, ifstream &ifst);
 void Out(shift *s, ofstream &ofst);
 void Out(replace *r, ofstream &ofst);
 void Out(intreplace *ir, ofstream &ofst);
+
+int long long Lenotext(string &otext) {
+    return otext.length();
+}
+
+bool Compare(text *first, text *second) {
+    return Lenotext(first->opentext) < Lenotext(second->opentext);
+}
 
 text* In(ifstream &ifst) {
 
