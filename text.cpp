@@ -3,9 +3,11 @@
 
 shift* Inshift(string &otext, ifstream &ifst);
 replace* Inreplace(string &otext, ifstream &ifst);
+intreplace* Inintrep(string &otext, ifstream &ifst);
 
 void Out(shift *s, ofstream &ofst);
 void Out(replace *r, ofstream &ofst);
+void Out(intreplace *ir, ofstream &ofst);
 
 text* In(ifstream &ifst) {
 
@@ -28,6 +30,13 @@ text* In(ifstream &ifst) {
             sp->opentext = otext;
             sp->obj = (void*)Inreplace(otext, ifst);
             break;
+        case 3:
+            sp = new text;
+            sp->k = text::key::INTREPLACE;
+            getline(ifst, otext);
+            sp->opentext = otext;
+            sp->obj = (void*)Inintrep(otext, ifst);
+            break;
         default:
             return nullptr;
     }
@@ -43,6 +52,10 @@ void Out(text &t, ofstream &ofst) {
         case text::key::REPLACE:
             ofst << "Input text: " << t.opentext << endl;
             Out((replace*)t.obj, ofst);
+            break;
+        case text::key::INTREPLACE:
+            ofst << "Input text: " << t.opentext << endl;
+            Out((intreplace*)t.obj, ofst);
             break;
         default:
             ofst << "Incorrect figure!" << endl;

@@ -1,6 +1,6 @@
 #include "shift.h"
 #include "replace.h"
-#include <fstream>
+#include "intreplace.h"
 
 using namespace std;
 
@@ -10,13 +10,9 @@ struct text {
     text* next;
     text* prev;
 
-    enum key {SHIFT, REPLACE};
+    enum key {SHIFT, REPLACE, INTREPLACE};
     key k;
     void* obj;
-    /*//struct {
-        shift s;
-        replace r;
-    //};*/
 
     text() {};
     ~text() {};

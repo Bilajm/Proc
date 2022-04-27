@@ -1,6 +1,4 @@
 #include "replace.h"
-#include <fstream>
-#include <cstring>
 
 string transform(string &otext, vector<pair<char, char>> A) {
 
@@ -19,12 +17,12 @@ string transform(string &otext, vector<pair<char, char>> A) {
             chektoup = true;
             otext[i] = tolower(otext[i]);
         }
-        for (int j = 0; j < A.size(); j++) {
-            if (otext[i] == A[j].first) {
-                if (chektoup == true) {
-                    rtext.push_back(toupper(A[j].second));
+        for (auto & j : A) {
+            if (otext[i] == j.first) {
+                if (chektoup) {
+                    rtext.push_back(toupper(j.second));
                 } else {
-                    rtext.push_back(A[j].second);
+                    rtext.push_back(j.second);
                 }
                 cheknovec = false;
                 continue;
@@ -32,10 +30,9 @@ string transform(string &otext, vector<pair<char, char>> A) {
         }
         if (chektoup && cheknovec) {
             rtext.push_back(toupper(otext[i]));
-        } else if ((chektoup == false) && cheknovec) {
+        } else if (!chektoup && cheknovec) {
             rtext.push_back(otext[i]);
         }
-
     }
     return rtext;
 }
@@ -52,8 +49,6 @@ replace* Inreplace(string &otext, ifstream &ifst) {
     for (int j = 0; j <= a1.length(); j++) {
         r->AA[j] = make_pair(a1[j], a2[j]);
     }
-
-    //strcpy(r->repltext,transform(otext, r->AA).c_str());
     r->repltext = transform(otext, r->AA);
     return r;
 }
@@ -64,12 +59,10 @@ void Out(replace *r, ofstream &ofst) {
     for (auto & i : r->AA) {
         ofst << i.first << ' ';
     }
-
     ofst << endl << "End symbols:         ";
 
     for (auto & i : r->AA) {
         ofst << i.second << ' ';
     }
-
     ofst << endl << "Output text: " << r->repltext << endl;
 }
