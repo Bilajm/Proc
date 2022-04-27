@@ -90,6 +90,22 @@ void Sort(container &c) {
     }
 }
 
+void OutRep(container &c, ofstream &ofst) {
+    text *t;
+    t = c.head;
+    ofst << "Only replace." << endl << endl;
+    for(int i = 0; i < c.len; i++) {
+        ofst << i << ": ";
+        if (t->k == text::REPLACE)
+            Out(*(t), ofst);
+        else
+            ofst << endl;
+        t = t->next;
+        ofst << endl;
+    }
+
+}
+
 void Clear(container &c) {
 
     while (c.head) {
