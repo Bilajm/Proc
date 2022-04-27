@@ -66,12 +66,23 @@ Message length: 3
 
 Only replace.
 
-0: 
-
-1: Input text:  Hello, world!
+0: Input text:  Hello, world!
 Starting characters: h e l o w r d 
 End symbols:         w r d h e l o 
 Output text:  Wrddh, ehldo!
+Owner's name: Andrey
+
+1: 
+
+2: 
+
+3: 
+
+4: Input text: ABC
+Starting characters: a b c 
+End symbols:         c a b 
+Output text: CAB
+Owner's name: Zlata
 
 Empty container. 
 Container 0 elements.
