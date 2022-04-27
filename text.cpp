@@ -10,6 +10,10 @@ int long long Lenotext(string &otext) {
     return otext.length();
 }
 
+bool Compare(text *first, text *second) {
+    return Lenotext(first->opentext) < Lenotext(second->opentext);
+}
+
 text* In(ifstream &ifst) {
 
     text *sp;

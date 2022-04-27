@@ -8,6 +8,7 @@ void Clear(container &c);
 void In(container &c, ifstream &ifst);
 void Out(container &c, ofstream &ofst);
 void Outlen(container &c, ofstream &ofst);
+void Sort(container &c);
 
 int main(/*int argc, char* argv[]*/) {
     /*
@@ -28,8 +29,9 @@ int main(/*int argc, char* argv[]*/) {
     cout << "Init" << endl;
     In(c, ifst);
     ofst << "Filled container. " << endl;
-    Outlen(c, ofst);
     Out(c, ofst);
+    Sort(c);
+    Outlen(c, ofst);
     Clear(c);
     ofst << "Empty container. " << endl;
     Out(c, ofst);
