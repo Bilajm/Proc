@@ -20,18 +20,19 @@ text* In(ifstream &ifst) {
             getline(ifst, otext);
             sp->opentext = otext;
             sp->obj = (void*)Inshift(otext, ifst);
-            return sp;
+            break;
         case 2:
             sp = new text;
             sp->k = text::key::REPLACE;
             getline(ifst, otext);
             sp->opentext = otext;
             sp->obj = (void*)Inreplace(otext, ifst);
-            return sp;
+            break;
         default:
             return nullptr;
-
     }
+    ifst >> sp->ownername;
+    return sp;
 }
 
 void Out(text &t, ofstream &ofst) {
@@ -48,5 +49,6 @@ void Out(text &t, ofstream &ofst) {
             ofst << "Incorrect figure!" << endl;
             break;
     }
+    ofst << "Owner's name: " << t.ownername << endl;
 }
 

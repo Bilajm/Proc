@@ -7,16 +7,13 @@ using namespace std;
 struct text {
 
     string opentext;
+    string ownername;
     text* next;
     text* prev;
 
     enum key {SHIFT, REPLACE};
     key k;
     void* obj;
-    /*//struct {
-        shift s;
-        replace r;
-    //};*/
 
     text() {};
     ~text() {};
