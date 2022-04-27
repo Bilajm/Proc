@@ -5,6 +5,8 @@ void Out(text &t, ofstream &ofst);
 
 void Init(container &c) {c.len = 0; }
 
+int long long Lenotext(string &otext);
+
 void In(container &c, ifstream &ifst) {
     while (!ifst.eof()) {
         text *t;
@@ -28,11 +30,27 @@ void In(container &c, ifstream &ifst) {
 void Out(container &c, ofstream &ofst) {
     text *t;
     t = c.head;
-    ofst << "Container " << c.len << " elements." << endl;
+    ofst << "Container " << c.len << " elements." << endl << endl;
     for(int i = 0; i < c.len; i++) {
         ofst << i << ": ";
         Out(*(t), ofst);
         t = t->next;
+        ofst << endl;
+    }
+}
+
+void Outlen(container &c, ofstream &ofst) {
+    text *t;
+    t = c.head;
+    ofst << "Container " << c.len << " elements." << endl << endl;
+    for(int i = 0; i < c.len; i++) {
+        ofst << i << ": ";
+        Out(*(t), ofst);
+        int long long len = Lenotext(t->opentext);
+        ofst << "Message length: "
+             << len << endl;
+        t = t->next;
+        ofst << endl;
     }
 }
 

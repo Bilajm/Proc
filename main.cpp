@@ -7,6 +7,7 @@ void Init(container &c);
 void Clear(container &c);
 void In(container &c, ifstream &ifst);
 void Out(container &c, ofstream &ofst);
+void Outlen(container &c, ofstream &ofst);
 
 int main(/*int argc, char* argv[]*/) {
     /*
@@ -27,7 +28,7 @@ int main(/*int argc, char* argv[]*/) {
     cout << "Init" << endl;
     In(c, ifst);
     ofst << "Filled container. " << endl;
-    cout << "In" << endl;
+    Outlen(c, ofst);
     Out(c, ofst);
     Clear(c);
     ofst << "Empty container. " << endl;

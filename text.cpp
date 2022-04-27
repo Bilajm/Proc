@@ -1,11 +1,14 @@
 #include "text.h"
 
-
 shift* Inshift(string &otext, ifstream &ifst);
 replace* Inreplace(string &otext, ifstream &ifst);
 
 void Out(shift *s, ofstream &ofst);
 void Out(replace *r, ofstream &ofst);
+
+int long long Lenotext(string &otext) {
+    return otext.length();
+}
 
 text* In(ifstream &ifst) {
 

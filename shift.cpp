@@ -1,6 +1,5 @@
 #include "shift.h"
 #include <fstream>
-#include <cstring>
 
 string transform(string &otext, int shift) {
 
@@ -38,7 +37,6 @@ shift* Inshift(string &otext, ifstream &ifst) {
     shift *s = new shift;
     ifst >> s->shiftchar;
     string stext = transform(otext, s->shiftchar);
-    //strcpy(s->shifttext, stext.c_str());
     s->shifttext = stext;
     return s;
 }
