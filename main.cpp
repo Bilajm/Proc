@@ -7,6 +7,7 @@ void Init(container &c);
 void Clear(container &c);
 void In(container &c, ifstream &ifst);
 void Out(container &c, ofstream &ofst);
+void OutRep(container &c, ofstream &ofst);
 
 int main(/*int argc, char* argv[]*/) {
     /*
@@ -29,6 +30,7 @@ int main(/*int argc, char* argv[]*/) {
     ofst << "Filled container. " << endl;
     cout << "In" << endl;
     Out(c, ofst);
+    OutRep(c, ofst);
     Clear(c);
     ofst << "Empty container. " << endl;
     Out(c, ofst);

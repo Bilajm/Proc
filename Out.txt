@@ -10,6 +10,15 @@ Starting characters: h e l o w r d
 End symbols:         w r d h e l o 
 Output text:  Wrddh, ehldo!
 
+Only replace.
+
+0: 
+
+1: Input text:  Hello, world!
+Starting characters: h e l o w r d 
+End symbols:         w r d h e l o 
+Output text:  Wrddh, ehldo!
+
 Empty container. 
 Container 0 elements.
 
