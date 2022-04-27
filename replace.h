@@ -1,7 +1,5 @@
 #ifndef REPLACE_H
 #define REPLACE_H
-
-
 #include <fstream>
 #include <vector>
 #include <utility>

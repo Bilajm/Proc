@@ -28,11 +28,12 @@ void In(container &c, ifstream &ifst) {
 void Out(container &c, ofstream &ofst) {
     text *t;
     t = c.head;
-    ofst << "Container " << c.len << " elements." << endl;
+    ofst << "Container " << c.len << " elements." << endl << endl;
     for(int i = 0; i < c.len; i++) {
         ofst << i << ": ";
         Out(*(t), ofst);
         t = t->next;
+        ofst << endl;
     }
 }
 

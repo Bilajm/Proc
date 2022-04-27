@@ -9,7 +9,7 @@ void In(container &c, ifstream &ifst);
 void Out(container &c, ofstream &ofst);
 
 int main(/*int argc, char* argv[]*/) {
-    /*
+/*
     if(argc !=3) {
         cout << "incorrect command line! " "Waited: command in_file out_file"
              << endl;
