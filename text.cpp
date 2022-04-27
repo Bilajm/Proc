@@ -1,5 +1,6 @@
 #include "text.h"
 
+
 shift* Inshift(string &otext, ifstream &ifst);
 replace* Inreplace(string &otext, ifstream &ifst);
 intreplace* Inintrep(string &otext, ifstream &ifst);
@@ -46,7 +47,9 @@ text* In(ifstream &ifst) {
             break;
         default:
             return nullptr;
+
     }
+    ifst >> sp->ownername;
     return sp;
 }
 
@@ -68,5 +71,6 @@ void Out(text &t, ofstream &ofst) {
             ofst << "Incorrect figure!" << endl;
             break;
     }
+    ofst << "Owner's name: " << t.ownername << endl;
 }
 

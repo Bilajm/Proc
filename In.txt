@@ -1,13 +1,18 @@
-1Hello, world
+1Hello, world!
 4
+Sergey
 2 Hello, world!
 helowrd
 wrdhelo
+Andrey
 1ABC
 5
+Vasya
 2ABC
 abc
 cab
+Zlata
 3Hello
 h e l o
 1 2 3 4
+Ola

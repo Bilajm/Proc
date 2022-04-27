@@ -7,6 +7,7 @@ using namespace std;
 struct text {
 
     string opentext;
+    string ownername;
     text* next;
     text* prev;
 
