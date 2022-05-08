@@ -9,6 +9,7 @@ void In(container &c, ifstream &ifst);
 void Out(container &c, ofstream &ofst);
 void Outlen(container &c, ofstream &ofst);
 void Sort(container &c);
+void MultiMetod(container &c, ofstream &ofst);
 void OutRep(container &c, ofstream &ofst);
 
 int main(/*int argc, char* argv[]*/) {
@@ -33,6 +34,7 @@ int main(/*int argc, char* argv[]*/) {
     Sort(c);
     Outlen(c, ofst);
     OutRep(c, ofst);
+    MultiMetod(c, ofst);
     Clear(c);
     ofst << "Empty container. " << endl;
     Out(c, ofst);

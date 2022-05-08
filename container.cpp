@@ -95,6 +95,72 @@ void Sort(container &c) {
     }
 }
 
+void MultiMetod(container &c, ofstream &ofst) {
+    ofst << "Multimetod." << endl;
+    text *first = c.head;
+    while (first != c.tail) {
+        text *second = first;
+        do {
+            second = second->next;
+            switch (first->k) {
+                case text::SHIFT:
+                    switch (second->k) {
+                        case text::SHIFT:
+                            ofst << "Shift and Shift" << endl;
+                            break;
+                        case text::REPLACE:
+                            ofst << "Shift and Replace" << endl;
+                            break;
+                        case text::INTREPLACE:
+                            ofst << "Shift and IntReplace" << endl;
+                            break;
+                        default:
+                            ofst << "Unknown type" << endl;
+                    }
+                    break;
+                case text::REPLACE:
+                    switch (second->k) {
+                        case text::SHIFT:
+                            ofst << "Replace and Shift" << endl;
+                            break;
+                        case text::REPLACE:
+                            ofst << "Replace and Replace" << endl;
+                            break;
+                        case text::INTREPLACE:
+                            ofst << "Replace and IntReplace" << endl;
+                            break;
+                        default:
+                            ofst << "Unknown type" << endl;
+                    }
+                    break;
+                case text::INTREPLACE:
+                    switch (second->k) {
+                        case text::SHIFT:
+                            ofst << "IntReplace and Shift" << endl;
+                            break;
+                        case text::REPLACE:
+                            ofst << "IntReplace and Replace" << endl;
+                            break;
+                        case text::INTREPLACE:
+                            ofst << "IntReplace and IntReplace" << endl;
+                            break;
+                        default:
+                            ofst << "Unknown type" << endl;
+                    }
+                    break;
+                default:
+                    ofst << "Unknown type" << endl;
+            }
+            ofst << endl;
+            Out(*(first), ofst);
+            ofst << endl;
+            Out(*(second), ofst);
+            ofst << endl;
+        } while (second != c.tail);
+        first = first->next;
+    }
+}
+
 void OutRep(container &c, ofstream &ofst) {
     text *t;
     t = c.head;
