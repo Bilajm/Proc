@@ -1,88 +1,56 @@
 Filled container. 
-Container 5 elements.
-
-0: Input text: Hello, world!
-Shift: 4
-Output text: Lipps, asvph!
-Owner's name: Sergey
+Container 3 elements.
 
 1: Input text:  Hello, world!
+Shift: 4
+Output text:  Lipps, asvph!
+Owner's name: Sergey
+
+2: Input text:  Hello, world!
 Starting characters: h e l o w r d 
 End symbols:         w r d h e l o 
 Output text:  Wrddh, ehldo!
 Owner's name: Andrey
 
-2: Input text: ABC
-Shift: 5
-Output text: FGH
-Owner's name: Vasya
+3: Input text: abcdef
+Starting characters: a b c d e f 
+End symbols:         26 25 24 23 21 0 
+Output text: 26 25 24 23 21 0 
+Owner's name: 
 
-3: Input text: ABC
-Starting characters: a b c 
-End symbols:         c a b 
-Output text: CAB
-Owner's name: Zlata
+Container 3 elements.
 
-4: Input text: Hello
-Starting characters: h e l o 
-End symbols:         1 2 3 4 
-Output text: 1 2 3 3 4 
-Owner's name: Ola
+1: Input text:  Hello, world!
+Shift: 4
+Output text:  Lipps, asvph!
+Owner's name: Sergey
+Message length: 14
 
-Container 5 elements.
-
-0: Input text:  Hello, world!
+2: Input text:  Hello, world!
 Starting characters: h e l o w r d 
 End symbols:         w r d h e l o 
 Output text:  Wrddh, ehldo!
 Owner's name: Andrey
 Message length: 14
 
-1: Input text: Hello, world!
-Shift: 4
-Output text: Lipps, asvph!
-Owner's name: Sergey
-Message length: 13
-
-2: Input text: Hello
-Starting characters: h e l o 
-End symbols:         1 2 3 4 
-Output text: 1 2 3 3 4 
-Owner's name: Ola
-Message length: 5
-
-3: Input text: ABC
-Shift: 5
-Output text: FGH
-Owner's name: Vasya
-Message length: 3
-
-4: Input text: ABC
-Starting characters: a b c 
-End symbols:         c a b 
-Output text: CAB
-Owner's name: Zlata
-Message length: 3
+3: Input text: abcdef
+Starting characters: a b c d e f 
+End symbols:         26 25 24 23 21 0 
+Output text: 26 25 24 23 21 0 
+Owner's name: 
+Message length: 6
 
 Only replace.
 
-0: Input text:  Hello, world!
+1: 
+
+2: Input text:  Hello, world!
 Starting characters: h e l o w r d 
 End symbols:         w r d h e l o 
 Output text:  Wrddh, ehldo!
 Owner's name: Andrey
 
-1: 
-
-2: 
-
 3: 
-
-4: Input text: ABC
-Starting characters: a b c 
-End symbols:         c a b 
-Output text: CAB
-Owner's name: Zlata
 
 Empty container. 
 Container 0 elements.

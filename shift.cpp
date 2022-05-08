@@ -1,5 +1,5 @@
 #include "shift.h"
-#include <fstream>
+#include <iostream>
 
 string transform(string &otext, int shift) {
 
@@ -32,10 +32,19 @@ string transform(string &otext, int shift) {
     return stext;
 }
 
-shift* Inshift(string &otext, ifstream &ifst) {
+shift* Inshift(string &otext, ifstream &ifst, int &len) {
 
     shift *s = new shift;
     ifst >> s->shiftchar;
+
+    if (ifst.fail()) {
+        ifst.clear();
+        string error;
+        getline(ifst, error);
+        cout << "Attention! Error reading element " << len + 1 << endl;
+        return s;
+    }
+
     string stext = transform(otext, s->shiftchar);
     s->shifttext = stext;
     return s;

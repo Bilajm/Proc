@@ -1,7 +1,7 @@
 #include "text.h"
 
 
-shift* Inshift(string &otext, ifstream &ifst);
+shift* Inshift(string &otext, ifstream &ifst, int &len);
 replace* Inreplace(string &otext, ifstream &ifst);
 intreplace* Inintrep(string &otext, ifstream &ifst);
 
@@ -17,11 +17,20 @@ bool Compare(text *first, text *second) {
     return Lenotext(first->opentext) < Lenotext(second->opentext);
 }
 
-text* In(ifstream &ifst) {
+text* In(ifstream &ifst, int &len) {
 
     text *sp;
     int k;
     ifst >> k;
+
+    if (ifst.fail()) {
+        ifst.clear();
+        string error;
+        getline(ifst, error);
+        cout << "Attention! Error reading element " << len + 1 << ". Check the correctness of input elements " << len << " and "<< len + 1 << "." << endl;
+        return nullptr;
+    }
+
     string otext;
     switch (k) {
         case 1:
@@ -29,7 +38,7 @@ text* In(ifstream &ifst) {
             sp->k = text::key::SHIFT;
             getline(ifst, otext);
             sp->opentext = otext;
-            sp->obj = (void*)Inshift(otext, ifst);
+            sp->obj = (void*)Inshift(otext, ifst, len);
             break;
         case 2:
             sp = new text;

@@ -1,6 +1,7 @@
 #include "shift.h"
 #include "replace.h"
 #include "intreplace.h"
+#include <iostream>
 
 using namespace std;
 

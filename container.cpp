@@ -1,6 +1,6 @@
 #include "container.h"
 
-text* In(ifstream &ifst);
+text* In(ifstream &ifst, int &len);
 void Out(text &t, ofstream &ofst);
 bool Compare(text *first, text *second);
 
@@ -11,7 +11,7 @@ int long long Lenotext(string &otext);
 void In(container &c, ifstream &ifst) {
     while (!ifst.eof()) {
         text *t;
-        if ((t = In(ifst)) != nullptr) {
+        if ((t = In(ifst, c.len)) != nullptr) {
             if (c.len == 0) {
                 c.head = t;
                 c.tail = t;
@@ -24,7 +24,12 @@ void In(container &c, ifstream &ifst) {
                 c.len++;
             }
         }
-        c.tail->next = nullptr;
+
+        if (c.head == nullptr) {
+            c.tail = nullptr;
+        } else {
+            c.tail->next = nullptr;
+        }
     }
 }
 
@@ -33,7 +38,7 @@ void Out(container &c, ofstream &ofst) {
     t = c.head;
     ofst << "Container " << c.len << " elements." << endl << endl;
     for(int i = 0; i < c.len; i++) {
-        ofst << i << ": ";
+        ofst << i + 1 << ": ";
         Out(*(t), ofst);
         t = t->next;
         ofst << endl;
@@ -45,7 +50,7 @@ void Outlen(container &c, ofstream &ofst) {
     t = c.head;
     ofst << "Container " << c.len << " elements." << endl << endl;
     for(int i = 0; i < c.len; i++) {
-        ofst << i << ": ";
+        ofst << i + 1 << ": ";
         Out(*(t), ofst);
         int long long len = Lenotext(t->opentext);
         ofst << "Message length: "
@@ -95,7 +100,7 @@ void OutRep(container &c, ofstream &ofst) {
     t = c.head;
     ofst << "Only replace." << endl << endl;
     for(int i = 0; i < c.len; i++) {
-        ofst << i << ": ";
+        ofst << i + 1 << ": ";
         if (t->k == text::REPLACE)
             Out(*(t), ofst);
         else
@@ -103,7 +108,6 @@ void OutRep(container &c, ofstream &ofst) {
         t = t->next;
         ofst << endl;
     }
-
 }
 
 void Clear(container &c) {
